@@ -1,6 +1,9 @@
 import tkinter as tk
 from tkinter import ttk
 from components.plotraw import PlotRaw
+from components.plotprocessed import PlotProcessed
+from services.set import Set
+import config
 
 class Tabcontrol(tk.Frame):
     def __init__(self, parent):
@@ -10,6 +13,9 @@ class Tabcontrol(tk.Frame):
 
         tabControl = ttk.Notebook(self)
 
-        tabControl.add(PlotRaw(self), text='Raw Plot')
+        s = Set(config._POINTS_COUNT, config._DEVIATION).getSet()
+
+        tabControl.add(PlotRaw(self, s), text='Raw Plot')
+        tabControl.add(PlotProcessed(self, s), text='Processed Plot')
 
         tabControl.pack(expand=1, fill="both")

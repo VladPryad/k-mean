@@ -5,12 +5,12 @@ import config
 import tkinter as tk
 
 class PlotRaw(tk.Frame):
-    def __init__(self, parent):
+    def __init__(self, parent, startset):
         self.parent = parent
         self.frame = tk.Frame(self.parent)
         super(PlotRaw, self).__init__()
 
-        s = Set(config._POINTS_COUNT, config._DEVIATION).getSet()
+        s = startset
         x = [el[0] for el in s]
         y = [el[1] for el in s]
 
