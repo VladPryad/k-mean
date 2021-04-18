@@ -16,7 +16,9 @@ class PlotRaw(tk.Frame):
 
         fig = plt.figure()
         ax = fig.add_axes([0,0,1,1])
-        ax.scatter(x, y, color='r')
+        ax.scatter(x, y, marker = 'o', s = 2 , color='r')
+
+        fig.suptitle('Unclustered objects', fontsize=16)
 
         chart_type = FigureCanvasTkAgg(fig, self)
         chart_type.get_tk_widget().pack()

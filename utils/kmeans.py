@@ -6,7 +6,7 @@ class Clusterer:
         self.kmeans = KMeans(
             init="k-means++",
             n_clusters = config._CLUSTER_COUNT,
-            n_init = 10,
+            n_init = config._PRECISION,
             max_iter = 300)
 
         self.kmeans.fit(scaledset)

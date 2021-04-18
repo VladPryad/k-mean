@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 from components.plotraw import PlotRaw
 from components.plotprocessed import PlotProcessed
+from components.dendrogram import Dendrogram
 from services.set import Set
 import config
 
@@ -17,5 +18,6 @@ class Tabcontrol(tk.Frame):
 
         tabControl.add(PlotRaw(self, s), text='Raw Plot')
         tabControl.add(PlotProcessed(self, s), text='Processed Plot')
+        tabControl.add(Dendrogram(self, s), text='Dendrogram')
 
         tabControl.pack(expand=1, fill="both")
